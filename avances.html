@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Avances - Avances Instituto Eureka</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#3B82F6', // Color principal (azul brillante)
+                            secondary: '#F6D13B', // Color complementario (amarillo brillante)
+                            background: '#dddddd', // Color de fondo (gris claro)
+                            darkBackground: '#1F2937', // Fondo oscuro
+                            textDark: '#F9FAFB', // Texto claro para modo oscuro
+                        }
+                    }
+                }
+            }
+        </script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+            }
+        </style>
+    </head>
+    <body class="bg-white text-black">
+        <!-- Responsive Menu -->
+        <header class="text-white p-4 bg-primary">
+            <div class="container mx-auto flex justify-between items-center max-w-4xl">
+                <div class="flex-shrink-0">
+                    <img src="images/LOGOeureka.png" alt="Logo Instituto Eureka" class="h-12">
+                </div>
+                <nav class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700  transition-transform transform hover:scale-105 hover:shadow-lg">Inicio</a>
+                        <a href="pages/integrantes.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700  transition-transform transform hover:scale-105 hover:shadow-lg">Integrantes</a>
+                        <a href="pages/avances.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700  transition-transform transform hover:scale-105 hover:shadow-lg">Avances</a>
+                        <a href="pages/proyecto.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700  transition-transform transform hover:scale-105 hover:shadow-lg">Proyecto</a>
+                        <a href="pages/sitioProyecto.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700  transition-transform transform hover:scale-105 hover:shadow-lg">Sitio del proyecto</a>
+                    </div>
+                </nav>
+                <button id="menuButton" class="ml-2 inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 md:hidden" onclick="toggleMobileMenu()">
+                    <svg id="menuIcon" class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <nav id="mobile-menu" class="hidden md:hidden bg-gray-700 text-white p-4">
+            <ul class="space-y-2 flex flex-col">
+                <li><a href="index.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700 transition-transform transform hover:scale-105 hover:shadow-lg">Inicio</a></li>
+                <li><a href="pages/integrantes.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700 transition-transform transform hover:scale-105 hover:shadow-lg">Integrantes</a></li>
+                <li><a href="pages/avances.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700 transition-transform transform hover:scale-105 hover:shadow-lg">Avances</a></li>
+                <li><a href="pages/proyecto.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700 transition-transform transform hover:scale-105 hover:shadow-lg">Proyecto</a></li>
+                <li><a href="pages/sitioProyecto.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700 transition-transform transform hover:scale-105 hover:shadow-lg">Sitio del proyecto</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="intro" class="mb-8">
+                <h1 class="text-3xl font-bold text-primary mb-4">Avances del Sitio Web - Instituto Eureka</h1>
+                <p class="text-lg">Bienvenidos a la página de avances del nuevo sitio web del Instituto Eureka. Nuestro objetivo es crear una plataforma digital que refleje nuestro compromiso con la formación integral de nuestros estudiantes y facilite la comunicación con nuestra comunidad educativa.</p>
+            </section>
+    
+            <section id="publico" class="mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">Público Objetivo</h2>
+                <p>Nuestro sitio web está dirigido principalmente a:</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Estudiantes actuales y potenciales</li>
+                    <li>Padres y tutores</li>
+                    <li>Docentes y personal administrativo</li>
+                    <li>Comunidad educativa en general</li>
+                </ul>
+            </section>
+    
+            <section id="identidad" class="mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">Identidad Visual</h2>
+                <p>Nuestra identidad visual se basa en los siguientes elementos:</p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Logo: Representa la innovación y el crecimiento</li>
+                    <li>Colores: Azul oscuro (#005F73) y verde suave (#94D2BD)</li>
+                    <li>Tipografía: Roboto, una fuente moderna y legible</li>
+                </ul>
+            </section>
+    
+            <section id="prototipo" class="mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">Prototipo</h2>
+                <p>Puedes ver nuestro prototipo en el siguiente enlace:</p>
+                <a href="#" class="text-blue-600 hover:underline">Ver prototipo en Figma</a>
+            </section>
+    
+            <section id="mapa" class="mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">Mapa del Sitio</h2>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Inicio</li>
+                    <li>Sobre Nosotros</li>
+                    <li>Programas Académicos</li>
+                    <li>Admisiones</li>
+                    <li>Noticias y Eventos</li>
+                    <li>Contacto</li>
+                </ul>
+            </section>
+    
+            <section id="equipo" class="mb-8">
+                <h2 class="text-2xl font-bold text-primary mb-4">Equipo de Trabajo</h2>
+                <ul class="list-disc list-inside ml-4">
+                    <li>Diseñador UX/UI</li>
+                    <li>Desarrollador Frontend</li>
+                    <li>Desarrollador Backend</li>
+                    <li>Gestor de Contenidos</li>
+                    <li>Coordinador de Proyecto</li>
+                </ul>
+            </section>
+        </main>
+    
+        <!-- Footer -->
+        <footer class="bg-primary text-white font-semibold py-8">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="flex flex-col gap-4 lg:flex-row justify-between text-sm">
+                    <p>14016 - 2024 - 2C - NOCHE</p>
+                    <p>EQUIPO 9</p>
+                    <p>PROFESORA: LITOVICIUS, PATRICIA CARINA</p>
+                    <p>UADE DISEÑO Y DESARROLLO WEB</p>
+                </div>
+                <div class="border-t border-gray-400 mt-4 pt-4 text-sm text-center">
+                    <p>&copy; Derechos reservados - Sitio desarrollado para uso educativo - Diseño y Desarrollo Web - UADE 2024</p>
+                </div>
+            </div>
+        </footer>
+    
+        <script src="script.js"></script>
+    </body>
+</html>
