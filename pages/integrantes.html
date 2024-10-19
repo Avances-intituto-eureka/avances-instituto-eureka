@@ -34,6 +34,9 @@
             main {
                 flex: 1; /* Esto hace que el main ocupe el espacio disponible */
             }
+            footer {
+                flex-shrink: 0; /* Esto evita que el footer se contraiga */
+            }
         </style>
     </head>
     <body class="bg-white text-black">
@@ -71,9 +74,9 @@
         </nav>
 
         <!-- Integrantes -->
-        <main class="container mx-auto mt-8 p-4 min-h-[70vh]">
-          <section class="mb-8 flex justify-center items-center flex-col bg-gray-100 w-full rounded-lg">
-            <h1 class="text-4xl font-bold mb-6 text-gray-900">Te presentamos a nuestro equipo</h1>
+        <main class="container mx-auto mt-8 p-4 rounded-lg lex flex-col justify-center items-center text-center mx-auto mb-8 p-8 w-full" >
+          <section class="mb-12 flex justify-center items-center flex-col bg-gray-100 w-full rounded-lg p-8">
+            <h1 class="text-4xl font-bold mb-6 text-primary text-center">Te presentamos a nuestro equipo</h1>
             <div class="flex flex-wrap gap-8 items-center justify-center mt-6">
               <!-- Card 1 -->
               <div class="bg-white rounded-[10px] transition-all duration-500 ease-[cubic-bezier(0.175, 0.885, 0.32, 1.275)] shadow-[inset_0_-3em_3em_rgba(0,0,0,0.1),_0_0_0_2px_rgb(190,190,190),_0.3em_0.3em_1em_rgba(0,0,0,0.3)] p-6 transform hover:scale-105">
@@ -108,20 +111,24 @@
           </section>
         </main>
     
+        
         <!-- Footer -->
-        <footer class="bg-primary text-white font-semibold py-8">
-            <div class="container mx-auto px-6 max-w-4xl">
-                <div class="flex flex-col gap-4 lg:flex-row justify-between text-sm">
-                    <p>14016 - 2024 - 2C - NOCHE</p>
-                    <p>EQUIPO 9</p>
-                    <p>PROFESORA: LITOVICIUS, PATRICIA CARINA</p>
-                    <p>UADE DISEÑO Y DESARROLLO WEB</p>
-                </div>
-                <div class="border-t border-gray-400 mt-4 pt-4 text-sm text-center">
-                    <p>&copy; Derechos reservados - Sitio desarrollado para uso educativo - Diseño y Desarrollo Web - UADE 2024</p>
-                </div>
-            </div>
-        </footer>
+    <footer class="bg-primary text-white font-semibold py-8">
+        <div class="container mx-auto px-6 max-w-4xl">
+          <div class="flex flex-col gap-4 lg:flex-row justify-between text-sm">
+            <p>14016 - 2024 - 2C - NOCHE</p>
+            <p>EQUIPO 9</p>
+            <p>PROFESORA: LITOVICIUS, PATRICIA CARINA</p>
+            <p>UADE DISEÑO Y DESARROLLO WEB</p>
+          </div>
+          <div class="border-t border-gray-400 mt-4 pt-4 text-sm text-center">
+            <p>
+              &copy; Derechos reservados - Sitio desarrollado para uso educativo -
+              Diseño y Desarrollo Web - UADE 2024
+            </p>
+          </div>
+        </div>
+      </footer>
     
         <script src="../script.js"></script>
     </body>
