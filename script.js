@@ -1,30 +1,32 @@
 // Selección de elementos del DOM
+const htmlElement = document.documentElement;
 const menuButton = document.getElementById('menuButton');
 const mobileMenu = document.getElementById('mobile-menu');
-const htmlElement = document.documentElement;
 
 menuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const currentPath = window.location.pathname.split('/').pop(); // Obtiene el nombre del archivo actual
-    document.querySelectorAll('.nav-link').forEach(link => {
-        if (link.getAttribute('href').endsWith(currentPath)) {
+function highlightActiveLink(linksSelector, basePath) {
+    let currentPath = window.location.pathname.replace(basePath, '').split('/').pop() || 'index.html';
+
+    document.querySelectorAll(linksSelector).forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (
+            linkHref.endsWith(currentPath) ||
+            (currentPath === 'index.html' && (linkHref === '/' || linkHref.endsWith('index.html')))
+        ) {
             link.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-blue-700', 'text-white', 'scale-105', 'shadow-lg');
         }
     });
-});
+}
+
+const basePath = '/avances-instituto-eureka/';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const currentPath = window.location.pathname.split('/').pop(); // Obtiene el nombre del archivo actual
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        if (link.getAttribute('href').endsWith(currentPath)) {
-            link.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-blue-700', 'text-white' , 'shadow-lg');
-        }
-    });
+    highlightActiveLink('.nav-link', basePath);    // Enlaces para la navegación principal
+    highlightActiveLink('.mobile-link', basePath); // Enlaces para el menú móvil
 });
-
 
 // Formulario de contacto 
 const contactForm = document.getElementById('contact-form');
