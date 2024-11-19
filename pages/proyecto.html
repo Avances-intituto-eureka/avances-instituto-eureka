@@ -45,28 +45,64 @@
                 </div>
                 <nav class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700  transition-transform transform hover:scale-105 hover:shadow-lg">Inicio</a>
-                        <a href="integrantes.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700  transition-transform transform hover:scale-105 hover:shadow-lg">Integrantes</a>
-                        <a href="avances.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700  transition-transform transform hover:scale-105 hover:shadow-lg">Avances</a>
-                        <a href="proyecto.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700 bg-gradient-to-r text-white shadow-lg">Proyecto</a>
-                        <a href="sitioProyecto.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700  transition-transform transform hover:scale-105 hover:shadow-lg">Sitio del proyecto</a>
+                        <a href="integrantes.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                            :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'integrantes.html' }">
+                            Integrantes
+                        </a>
+                        <a href="avances.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                            :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'avances.html' }">
+                            Avances
+                        </a>
+                        <a href="proyecto.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                            :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'proyecto.html' }">
+                            Proyecto
+                        </a>
+                        <a href="sitioProyecto.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                            :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'sitioProyecto.html' }">
+                            Sitio del proyecto
+                        </a>
                     </div>
                 </nav>
                 <button id="menuButton" class="ml-2 inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 md:hidden" onclick="toggleMobileMenu()">
                     <svg id="menuIcon" class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
         </header>
-
+        
         <nav id="mobile-menu" class="hidden md:hidden bg-gray-700 text-white p-4">
             <ul class="space-y-2 flex flex-col">
-                <li><a href="../index.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700 transition-transform transform hover:scale-105 hover:shadow-lg">Inicio</a></li>
-                <li><a href="integrantes.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700 transition-transform transform hover:scale-105 hover:shadow-lg">Integrantes</a></li>
-                <li><a href="avances.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700 transition-transform transform hover:scale-105 hover:shadow-lg">Avances</a></li>
-                <li><a href="proyecto.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700 transition-transform transform hover:scale-105 hover:shadow-lg">Proyecto</a></li>
-                <li><a href="sitioProyecto.html" class="block px-3 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700 transition-transform transform hover:scale-105 hover:shadow-lg">Sitio del proyecto</a></li>
+                <li>
+                    <a href="../index.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                        :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'index.html' }">
+                        Inicio
+                    </a>
+                </li>
+                <li>
+                    <a href="integrantes.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                        :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'integrantes.html' }">
+                        Integrantes
+                    </a>
+                </li>
+                <li>
+                    <a href="avances.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                        :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'avances.html' }">
+                        Avances
+                    </a>
+                </li>
+                <li>
+                    <a href="proyecto.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                        :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'proyecto.html' }">
+                        Proyecto
+                    </a>
+                </li>
+                <li>
+                    <a href="sitioProyecto.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                        :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'sitioProyecto.html' }">
+                        Sitio del proyecto
+                    </a>
+                </li>
             </ul>
         </nav>
         <main class="w-screen">

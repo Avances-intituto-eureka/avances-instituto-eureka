@@ -7,7 +7,23 @@ menuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const currentPath = window.location.pathname.split('/').pop(); // Obtiene el nombre del archivo actual
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('href').endsWith(currentPath)) {
+            link.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-blue-700', 'text-white', 'scale-105', 'shadow-lg');
+        }
+    });
+});
 
+document.addEventListener('DOMContentLoaded', () => {
+    const currentPath = window.location.pathname.split('/').pop(); // Obtiene el nombre del archivo actual
+    document.querySelectorAll('.mobile-link').forEach(link => {
+        if (link.getAttribute('href').endsWith(currentPath)) {
+            link.classList.add('bg-gradient-to-r', 'from-blue-600', 'to-blue-700', 'text-white' , 'shadow-lg');
+        }
+    });
+});
 
 
 // Formulario de contacto 
