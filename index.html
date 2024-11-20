@@ -10,11 +10,11 @@
                 theme: {
                     extend: {
                         colors: {
-                            primary: '#3B82F6', // Color principal (azul brillante)
-                            secondary: '#F6D13B', // Color complementario (amarillo brillante)
-                            background: '#dddddd', // Color de fondo (gris claro)
-                            darkBackground: '#1F2937', // Fondo oscuro
-                            textDark: '#F9FAFB', // Texto claro para modo oscuro
+                            primary: '#3B82F6', // Azul brillante
+                            secondary: '#F6D13B', // Amarillo brillante
+                            background: '#F3F4F6', // Fondo claro
+                            accent: '#10B981', // Verde brillante para detalles
+                            textDark: '#1E293B', // Texto oscuro para contraste
                         }
                     }
                 }
@@ -36,8 +36,8 @@
             }
         </style>
     </head>
-    <body class="bg-blue-200 text-black">
-        <!-- Responsive Menu -->
+    <body class="bg-white text-black">
+        <!-- Menu -->
         <header class="text-white p-4 bg-primary">
             <div class="container mx-auto flex justify-between items-center max-w-4xl">
                 <div class="flex-shrink-0">
@@ -45,6 +45,10 @@
                 </div>
                 <nav class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                        :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'index.html' }">
+                        Inicio
+                    </a>
                         <a href="pages/integrantes.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
                             :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'integrantes.html' }">
                             Integrantes
@@ -108,15 +112,15 @@
         
 
         <!-- Portada -->
-        <section class="bg-gradient-to-r from-blue-400 to-blue-600 text-white py-20">
+        <section class="bg-blue-200 text-gray-700 py-20">
             <div class="container mx-auto px-6 text-center flex flex-col items-center justify-center">
-              <h1 class="text-4xl font-bold mb-4 text-yellow-300 shadow-text">
+              <h1 class="text-4xl font-bold mb-4 text-primary shadow-text">
                 Bienvenido a la página de avances del Instituto Eureka
               </h1>
-              <p class="text-xl text-blue-100 mb-4">
+              <p class="text-xl mb-4">
                 Explora los avances de nuestros proyectos de diseño web
               </p>
-              <a href="/pages/sitioProyecto" class="w-[300px] text-center bg-yellow-400 text-blue-800 block px-4 py-2 rounded-md text-base font-semibold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+              <a href="/pages/sitioProyecto.html" class="w-[300px] text-center bg-yellow-400 text-blue-800 block px-4 py-2 rounded-md text-base font-semibold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
                 Explora la página del Instituto Eureka
               </a>
             </div>
@@ -125,24 +129,25 @@
         <!-- Datos del curso-->
         <main class="container mx-auto mt-8 p-4 flex-grow">
             <section class="mb-8 flex justify-center items-center">
-              <div class="flex flex-col md:flex-row justify-evenly max-w-[700px] w-full p-6 gap-6 bg-white rounded-[10px] transition-all duration-500 ease-[cubic-bezier(0.175, 0.885, 0.32, 1.275)] shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_30px_rgba(0,0,0,0.3)] transform hover:-translate-y-1">
+              <div class="flex flex-col md:flex-row justify-evenly max-w-[700px] w-full p-6 gap-6 bg-white rounded-[10px] transition-all duration-500 ease-[cubic-bezier(0.175, 0.885, 0.32, 1.275)] shadow-[inset_0_-3em_3em_rgba(0,0,0,0.1),_0_0_0_2px_rgb(190,190,190),_0.3em_0.3em_1em_rgba(0,0,0,0.3)] p-6 transform ">
                 <div class="w-full">
                   <h2 class="text-2xl font-bold text-blue-600 mb-4">Datos del equipo</h2>
-                  <ul class="space-y-2 text-gray-700">
-                    <li><strong class="text-blue-500">Número del equipo:</strong> 9</li>
-                    <li><strong class="text-blue-500">Nombre del equipo:</strong> NineSoft Solutions</li>
-                    <li><strong class="text-blue-500">Caso 3:</strong> Instituto Eureka</li>
-                    <li><strong class="text-blue-500">Año y curso:</strong> Primer Año - 14016</li>
-                    <li><strong class="text-blue-500">Materia:</strong> Diseño y Desarrollo Web</li>
-                    <li><strong class="text-blue-500">Docente:</strong> Litovicius, Patricia Carina</li>
-                  </ul>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><strong class="text-accent">Número del equipo:</strong> 9</li>
+                        <li><strong class="text-accent">Nombre del equipo:</strong> NineSoft Solutions</li>
+                        <li><strong class="text-accent">Caso 3:</strong> Instituto Eureka</li>
+                        <li><strong class="text-accent">Año y curso:</strong> Primer Año - 14016</li>
+                        <li><strong class="text-accent">Materia:</strong> Diseño y Desarrollo Web</li>
+                        <li><strong class="text-accent">Docente:</strong> Litovicius, Patricia Carina</li>
+                    </ul>
                 </div>
                 <div class="w-full md:w-42 flex items-center justify-center">
-                  <img src="/images/uade.png" width="176" height="176" alt="Logo UADE" class="rounded-full shadow-lg">
+                  <img src="/images/uade.png" width="176" height="176" alt="Logo UADE" class="rounded-full">
                 </div>
               </div>
             </section>
           </main>
+          
         <footer class="bg-primary text-white font-semibold py-8 text-center">
             <div class="container mx-auto px-6 max-w-4xl flex flex-col lg:flex-row items-center lg:items-start gap-8">               
                 <div class="flex flex-col gap-4 text-sm text-center lg:text-left">                   

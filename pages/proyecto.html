@@ -45,6 +45,10 @@
                 </div>
                 <nav class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="../index.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                        :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'index.html' }">
+                        Inicio
+                    </a>
                         <a href="integrantes.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
                             :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'integrantes.html' }">
                             Integrantes
@@ -106,11 +110,11 @@
             </ul>
         </nav>
         <main class="w-screen">
-            <section id="intro" class="rounded-lg lex flex-col justify-center items-center text-center mx-auto mb-8 p-8 w-full max-w-5xl">
+            <section id="intro" class="rounded-lg lex flex-col justify-center items-center text-center mx-auto mb-8 p-8 w-full max-w-4xl">
                 <h1 class="text-3xl font-bold text-primary mb-4">
                     Propuesta
                 </h1>
-                <section id="intro" class="w-full mb-8 bg-gray-100 rounded-lg shadow-lg flex flex-col justify-center items-center text-center mx-auto mb-8 p-8 w-full max-w-5xl">
+                <section id="intro" class="w-full mb-8 bg-blue-200 rounded-lg shadow-lg flex flex-col justify-center items-center text-center mx-auto mb-8 p-8 w-full max-w-5xl">
                     <p class="text-lg">
                         El sitio web del Instituto "Eureka" tiene como objetivo principal proporcionar información clara y accesible sobre los servicios educativos que ofrece. La institución se especializa en brindar apoyo académico a estudiantes universitarios mediante clases personalizadas, enfocándose en métodos de estudio flexibles y accesibles para jóvenes entre 18 y 25 años. Este sitio web busca facilitar el contacto entre los estudiantes y el instituto, ofreciendo una plataforma intuitiva para solicitar clases, obtener material educativo y recibir asesoramiento académico. Además, se implementarán estrategias de optimización para motores de búsqueda (SEO) y campañas en redes sociales para atraer tráfico al sitio.
                     </p>

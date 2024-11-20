@@ -10,11 +10,11 @@
         theme: {
           extend: {
             colors: {
-              primary: "#3B82F6", // Color principal (azul brillante)
-              secondary: "#F6D13B", // Color complementario (amarillo brillante)
-              background: "#dddddd", // Color de fondo (gris claro)
-              darkBackground: "#1F2937", // Fondo oscuro
-              textDark: "#F9FAFB", // Texto claro para modo oscuro
+              primary: '#3B82F6', // Azul brillante
+              secondary: '#F6D13B', // Amarillo brillante
+              background: '#F3F4F6', // Fondo claro
+              accent: '#10B981', // Verde brillante para detalles
+              textDark: '#1E293B', // Texto oscuro para contraste
             },
           },
         },
@@ -32,75 +32,79 @@
   </head>
   <body class="bg-white text-black">
     <!-- Responsive Menu -->
-      <header class="text-white p-4 bg-primary">
-          <div class="container mx-auto flex justify-between items-center max-w-4xl">
-              <div class="flex-shrink-0">
-                  <a href="../index.html"><img src="../images/LOGOeureka.png" alt="Logo Instituto Eureka" class="h-24"></a>
-              </div>
-              <nav class="hidden md:block">
-                  <div class="ml-10 flex items-baseline space-x-4">
-                      <a href="integrantes.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
-                          :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'integrantes.html' }">
-                          Integrantes
-                      </a>
-                      <a href="avances.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
-                          :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'avances.html' }">
-                          Avances
-                      </a>
-                      <a href="proyecto.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
-                          :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'proyecto.html' }">
-                          Proyecto
-                      </a>
-                      <a href="sitioProyecto.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
-                          :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'sitioProyecto.html' }">
-                          Sitio del proyecto
-                      </a>
-                  </div>
-              </nav>
-              <button id="menuButton" class="ml-2 inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 md:hidden" onclick="toggleMobileMenu()">
-                  <svg id="menuIcon" class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-              </button>
+    <header class="text-white p-4 bg-primary">
+      <div class="container mx-auto flex justify-between items-center max-w-4xl">
+          <div class="flex-shrink-0">
+              <a href="../index.html"><img src="../images/LOGOeureka.png" alt="Logo Instituto Eureka" class="h-24"></a>
           </div>
-      </header>
+          <nav class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-4">
+                  <a href="../index.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                  :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'index.html' }">
+                  Inicio
+              </a>
+                  <a href="integrantes.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                      :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'integrantes.html' }">
+                      Integrantes
+                  </a>
+                  <a href="avances.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                      :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'avances.html' }">
+                      Avances
+                  </a>
+                  <a href="proyecto.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                      :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'proyecto.html' }">
+                      Proyecto
+                  </a>
+                  <a href="sitioProyecto.html" class="nav-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                      :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'sitioProyecto.html' }">
+                      Sitio del proyecto
+                  </a>
+              </div>
+          </nav>
+          <button id="menuButton" class="ml-2 inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-300 md:hidden" onclick="toggleMobileMenu()">
+              <svg id="menuIcon" class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+          </button>
+      </div>
+    </header>
 
-      <nav id="mobile-menu" class="hidden md:hidden bg-gray-700 text-white p-4">
-        <ul class="space-y-2 flex flex-col">
-            <li>
-                <a href="../index.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
-                    :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'index.html' }">
-                    Inicio
-                </a>
-            </li>
-            <li>
-                <a href="integrantes.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
-                    :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'integrantes.html' }">
-                    Integrantes
-                </a>
-            </li>
-            <li>
-                <a href="avances.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
-                    :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'avances.html' }">
-                    Avances
-                </a>
-            </li>
-            <li>
-                <a href="proyecto.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
-                    :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'proyecto.html' }">
-                    Proyecto
-                </a>
-            </li>
-            <li>
-                <a href="sitioProyecto.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
-                    :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'sitioProyecto.html' }">
-                    Sitio del proyecto
-                </a>
-            </li>
-        </ul>
-      </nav>
+    <nav id="mobile-menu" class="hidden md:hidden bg-gray-700 text-white p-4">
+      <ul class="space-y-2 flex flex-col">
+          <li>
+              <a href="../index.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                  :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'index.html' }">
+                  Inicio
+              </a>
+          </li>
+          <li>
+              <a href="integrantes.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                  :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'integrantes.html' }">
+                  Integrantes
+              </a>
+          </li>
+          <li>
+              <a href="avances.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                  :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'avances.html' }">
+                  Avances
+              </a>
+          </li>
+          <li>
+              <a href="proyecto.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                  :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'proyecto.html' }">
+                  Proyecto
+              </a>
+          </li>
+          <li>
+              <a href="sitioProyecto.html" class="mobile-link block px-3 py-2 rounded-md text-base font-semibold transition-transform transform hover:scale-105 hover:shadow-lg hover:bg-gradient-to-r from-blue-600 to-blue-700"
+                  :class="{ 'bg-gradient-to-r from-blue-600 to-blue-700 text-white scale-105 shadow-lg': currentPage === 'sitioProyecto.html' }">
+                  Sitio del proyecto
+              </a>
+          </li>
+      </ul>
+    </nav>
 
-    <main class="m-10">
+    <main class=" ">
       <div
         class=" rounded-lg lex flex-col justify-center items-center text-center mx-auto mb-8 p-8 w-full max-w-5xl"
       >
@@ -118,11 +122,11 @@
       </div>
 
       <div
-        class="bg-background rounded-lg shadow-lg flex flex-col justify-center items-center text-center mx-auto mb-8 p-8 w-full max-w-5xl"
+        class="bg-background  flex flex-col justify-center items-center text-center mx-auto mb-8 p-8 w-full max-w-5xl"
       >
         <section
           id="publico"
-          class="w-full mb-8 p-6 bg-white rounded-lg shadow-lg"
+          class="w-full mb-8 p-6 bg-blue-200 rounded-lg shadow-lg"
         >
           <h2 class="text-3xl font-bold text-primary mb-4 text-center">
             Público Objetivo
@@ -132,7 +136,7 @@
           </p>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             <div
-              class="bg-primary rounded-lg shadow-md p-4 transition-transform transform hover:scale-105 text-center"
+              class="bg-secondary rounded-lg shadow-md p-4 transition-transform transform hover:scale-105 text-center"
             >
               <div class="flex items-center mb-2 justify-center">
                 <svg
@@ -141,26 +145,20 @@
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-6 h-6 text-white"
-                  <!--
-                  Cambiado
-                  a
-                  blanco
-                  --
+                  class="w-6 h-6 text-gray-800"
                 >
-                  >
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
                   />
                 </svg>
-                <h3 class="font-bold text-white">Estudiantes</h3>
+                <h3 class="font-bold text-gray-800">Estudiantes</h3>
               </div>
-              <p class="text-white">Estudiantes actuales y potenciales</p>
+              <p class="text-gray-800">Estudiantes actuales y potenciales</p>
             </div>
             <div
-              class="bg-primary rounded-lg shadow-md p-4 transition-transform transform hover:scale-105 text-center"
+              class="bg-secondary rounded-lg shadow-md p-4 transition-transform transform hover:scale-105 text-center"
             >
               <div class="flex items-center mb-2 justify-center">
                 <svg
@@ -169,13 +167,7 @@
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-6 h-6 text-white"
-                  <!--
-                  Cambiado
-                  a
-                  blanco
-                  --
-                >
+                  class="w-6 h-6 text-gray-800"
                   >
                   <path
                     stroke-linecap="round"
@@ -183,13 +175,13 @@
                     d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
                   />
                 </svg>
-                <h3 class="font-bold text-white">Padres</h3>
+                <h3 class="font-bold text-gray-800">Padres</h3>
                 
               </div>
-              <p class="text-white">Padres y tutores</p>
+              <p class="text-gray-800">Padres y tutores</p>
             </div>
             <div
-              class="bg-primary rounded-lg shadow-md p-4 transition-transform transform hover:scale-105 text-center"
+              class="bg-secondary rounded-lg shadow-md p-4 transition-transform transform hover:scale-105 text-center"
             >
               <div class="flex items-center mb-2 justify-center">
                 <svg
@@ -198,26 +190,20 @@
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-6 h-6 text-white"
-                  <!--
-                  Cambiado
-                  a
-                  blanco
-                  --
-                >
-                  >
+                  class="w-6 h-6 text-gray-800"
+                > 
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
                   />
                 </svg>
-                <h3 class="font-bold text-white">Docentes</h3>
+                <h3 class="font-bold text-gray-800">Docentes</h3>
               </div>
-              <p class="text-white">Docentes y personal administrativo</p>
+              <p class="text-gray-800">Docentes y personal administrativo</p>
             </div>
             <div
-              class="bg-primary rounded-lg shadow-md p-4 transition-transform transform hover:scale-105 text-center"
+              class="bg-secondary rounded-lg shadow-md p-4 transition-transform transform hover:scale-105 text-center"
             >
               <div class="flex items-center mb-2 justify-center">
                 <svg
@@ -226,13 +212,7 @@
                   viewBox="0 0 24 24"
                   stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-6 h-6 text-white"
-                  <!--
-                  Cambiado
-                  a
-                  blanco
-                  --
-                >
+                  class="w-6 h-6 text-gray-800"
                   >
                   <path
                     stroke-linecap="round"
@@ -240,16 +220,16 @@
                     d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z"
                   />
                 </svg>
-                <h3 class="font-bold text-white">Comunidad</h3>
+                <h3 class="font-bold text-gray-800">Comunidad</h3>
               </div>
-              <p class="text-white">Comunidad educativa en general</p>
+              <p class="text-gray-800">Comunidad educativa en general</p>
             </div>
           </div>
         </section>
 
         <section
           id="identidad"
-          class="w-full mt-8 p-6 bg-white rounded-lg shadow-md"
+          class="w-full mt-8 p-6 bg-blue-200 rounded-lg shadow-md"
         >
           <h2 class="text-2xl font-bold text-primary mb-4">Identidad Visual</h2>
           <p>Nuestra identidad visual se basa en los siguientes elementos:</p>
@@ -272,22 +252,32 @@
             <li class="mb-4">
               <div class="font-bold">Colores</div>
               <div class="flex items-center justify-center mt-2 space-x-4">
-                <div
-                  class="w-20 h-20 rounded-md flex items-center justify-center text-white font-semibold bg-blue-500"
-                >
+                <!-- Azul Brillante (#3B82F6) -->
+                <div class="w-20 h-20 rounded-md flex items-center justify-center text-white font-semibold" style="background-color: #3B82F6;">
                   #3B82F6
                 </div>
-                <div
-                  class="w-20 h-20 rounded-md flex items-center justify-center text-white font-semibold bg-white border border-[#3B82F6]"
-                >
-                  <p class="text-black">#FFFFFF</p>
+                
+                <!-- Amarillo Brillante (#F6D13B) -->
+                <div class="w-20 h-20 rounded-md flex items-center justify-center text-white font-semibold" style="background-color: #F6D13B;">
+                  #F6D13B
                 </div>
-                 <div
-                  class="w-20 h-20 rounded-md flex items-center justify-center text-white font-semibold bg-background"
-                >
-                  <p class="text-black">#DDDDDD</p>
+              
+                <!-- Fondo Claro (#F3F4F6) -->
+                <div class="w-20 h-20 rounded-md flex items-center justify-center text-black font-semibold" style="background-color: #F3F4F6;">
+                  #F3F4F6
+                </div>
+              
+                <!-- Verde Brillante (#10B981) -->
+                <div class="w-20 h-20 rounded-md flex items-center justify-center text-white font-semibold" style="background-color: #10B981;">
+                  #10B981
+                </div>
+              
+                <!-- Texto Oscuro (#1E293B) -->
+                <div class="w-20 h-20 rounded-md flex items-center justify-center text-white font-semibold" style="background-color: #1E293B;">
+                  #1E293B
                 </div>
               </div>
+              
             </li>
             <li class="mb-4">
               <div class="font-bold">Tipografía</div>
@@ -302,7 +292,7 @@
 
         <section
           id="prototipo"
-          class="w-full mt-8 p-6 bg-white rounded-lg shadow-md flex flex-col items-center"
+          class="w-full mt-8 p-6 bg-blue-200 rounded-lg shadow-md flex flex-col items-center"
         >
           <h2 class="text-2xl font-bold text-primary mb-4">Prototipo</h2>
           <p class="mb-4">
@@ -314,7 +304,7 @@
           > -->
           <a
             href="https://www.figma.com/design/NTPPGjz2w5gdQT3sMskHL1/Instituto-Eureka?t=TMf3cDriaSjTttmE-1"
-            class="w-[300px] text-center bg-white text-primary block px-4 py-2 rounded-md text-base font-semibold hover:text-white hover:bg-gradient-to-r from-blue-600 to-blue-700 transition-transform transform hover:scale-105 hover:shadow-lg border border-[#3B82F6]" target="_blank" 
+            class="w-[300px] text-center bg-yellow-400 text-blue-800 block px-4 py-2 rounded-md text-base font-semibold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 hover:shadow-lg" target="_blank" 
           >
             Ver prototipo en Figma
           </a>
@@ -350,23 +340,23 @@
 
         <section
           id="equipo"
-          class="w-full mt-8 p-6 bg-white rounded-lg shadow-md"
+          class="w-full mt-8 bg-white rounded-[10px] transition-all duration-500 ease-[cubic-bezier(0.175, 0.885, 0.32, 1.275)] shadow-[inset_0_-3em_3em_rgba(0,0,0,0.1),_0_0_0_2px_rgb(190,190,190),_0.3em_0.3em_1em_rgba(0,0,0,0.3)] p-6 transform "
         >
           <h2 class="text-2xl font-bold text-primary mb-4">
             Equipo de Trabajo
           </h2>
           <ul class="list-disc list-inside ml-4 space-y-2 list-none">
             <li class="text-gray-700 hover:text-primary transition-colors">
-              Diseñadores UX/UI: Katherine Alzamora / Beto Idrogo
+              <strong class="text-accent">Diseñadores UX/UI:</strong> Katherine Alzamora / Beto Idrogo
             </li>
             <li class="text-gray-700 hover:text-primary transition-colors">
-              Maquetadores: Walter Romero
+              <strong class="text-accent">Maquetadores:</strong> Walter Romero
             </li>
             <li class="text-gray-700 hover:text-primary transition-colors">
-              Programadores: Nahuel Menichetti
+              <strong class="text-accent">Programadores:</strong> Nahuel Menichetti
             </li>
             <li class="text-gray-700 hover:text-primary transition-colors">
-              Comunicador Web: Ezequiel Souza
+              <strong class="text-accent">Comunicador Web:</strong> Ezequiel Souza
             </li>
           </ul>
         </section>
